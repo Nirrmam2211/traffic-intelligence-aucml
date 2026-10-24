@@ -864,14 +864,25 @@ elif page == "Traffic Forecasting":
         ))
 
     # Milestones (referenced to exact categorical forecast timestamps)
-  fig_fcst.add_vline(x=2, line_dash="dash", line_color="#a855f7",
-                      annotation_text="15m", annotation_position="top right")
-    fig_fcst.add_vline(x=5, line_dash="dash", line_color="#a855f7",
-                      annotation_text="30m", annotation_position="top right")
-    fig_fcst.add_vline(x=11, line_dash="dash", line_color="#a855f7",
-                      annotation_text="60m", annotation_position="top right")
+    # Milestones (referenced to exact categorical forecast timestamps)
+    fig_fcst.add_vline(
+        x=2, line_dash="dash", line_color="#a855f7",
+        annotation_text="15m", annotation_position="top right"
+    )
+    fig_fcst.add_vline(
+        x=5, line_dash="dash", line_color="#a855f7",
+        annotation_text="30m", annotation_position="top right"
+    )
+    fig_fcst.add_vline(
+        x=11, line_dash="dash", line_color="#a855f7",
+        annotation_text="60m", annotation_position="top right"
+    )
 
-    apply_dark_theme(fig_fcst, title=f"Multi-Horizon Forecast Trajectory — Sensor #{sensor_id} [Sample #{sample_idx}]", height=500)
+    apply_dark_theme(
+        fig_fcst,
+        title=f"Multi-Horizon Forecast Trajectory — Sensor #{sensor_id} [Sample #{sample_idx}]",
+        height=500
+    )
     fig_fcst.update_layout(
         xaxis_title="Timeline (5-Minute Intervals: History ⟶ Future Forecast)",
         yaxis_title="Traffic Flow (vehicles / 5 min)",
